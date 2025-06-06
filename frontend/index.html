@@ -1,0 +1,44 @@
+<!-- frontend/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>AI Learning Assistant</h1>
+
+  <section>
+    <h2>Summarize</h2>
+    <textarea id="summarizeInput"></textarea>
+    <button onclick="summarizeNotes()">Summarize</button>
+    <p id="summaryOutput"></p>
+  </section>
+
+  <section>
+    <h2>Expand Bullet Points</h2>
+    <textarea id="expandInput"></textarea>
+    <button onclick="expandBullets()">Expand</button>
+    <p id="expandOutput"></p>
+  </section>
+
+  <section>
+    <h2>Generate Quiz</h2>
+    <textarea id="quizInput"></textarea>
+    <button onclick="generateQuiz()">Generate</button>
+    <p id="quizOutput"></p>
+  </section>
+
+  <section>
+    <h2>Translate</h2>
+    <textarea id="translateInput"></textarea>
+    <input type="text" id="targetLanguage" placeholder="e.g., Hindi" />
+    <button onclick="translateText()">Translate</button>
+    <p id="translateOutput"></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
