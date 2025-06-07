@@ -8,4 +8,4 @@ const sessionSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('Session', sessionSchema);
+module.exports = mongoose.model('quize', sessionSchema);
