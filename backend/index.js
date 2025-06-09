@@ -20,12 +20,15 @@ app.use(express.json());
 app.use('/api/ai', aiRoutes);
 
 // Serve frontend static files
-app.use(express.static(path.join(__dirname, '..', 'frontend')));
+// app.use(express.static(path.join(__dirname, '..', 'frontend')));
 
-// Catch-all route for SPA
+// // Catch-all route for SPA
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
+// });
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
-});
+  res.send('Server is running from VERSEL')
+})
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
