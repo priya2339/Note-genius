@@ -2,7 +2,7 @@ async function summarizeNotes() {
   const text = document.getElementById('summarizeInput').value;
 
   try {
-    const response = await fetch('/api/ai/summarize', {
+    const response = await fetch('https://note-genius-nine.vercel.app/api/ai/summarize', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text })
@@ -19,7 +19,7 @@ async function expandBullets() {
   const bullets = document.getElementById('expandInput').value;
 
   try {
-    const response = await fetch('/api/ai/expand', {
+    const response = await fetch('https://note-genius-nine.vercel.app/api/ai/expand', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ bullets })
@@ -36,7 +36,7 @@ async function generateQuiz() {
   const text = document.getElementById('quizInput').value;
 
   try {
-    const response = await fetch('/api/ai/quiz', {
+    const response = await fetch('https://note-genius-nine.vercel.app/api/ai/quiz', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text })
@@ -54,7 +54,7 @@ async function translateText() {
   const targetLanguage = document.getElementById('targetLanguage').value;
 
   try {
-    const response = await fetch('/api/ai/translate', {
+    const response = await fetch('https://note-genius-nine.vercel.app/api/ai/translate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, targetLanguage })
