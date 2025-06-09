@@ -2,7 +2,7 @@ async function summarizeNotes() {
   const text = document.getElementById('summarizeInput').value;
 
   try {
-    const response = await fetch('https://note-genius-nine.vercel.app//api/ai/summarize', {
+    const response = await fetch('https://note-genius-nine.vercel.app/api/ai/summarize', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text })

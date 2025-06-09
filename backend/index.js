@@ -6,6 +6,14 @@ require('dotenv').config();
 
 const aiRoutes = require('./routes/routes');
 
+const cors = require('cors');
+app.use(cors({
+  origin: 'https://note-genius-fcy2.vercel.app', // or '*', but not recommended for production
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
+}));
+
+
 const app = express();
 const PORT = process.env.PORT || 5500;
 
