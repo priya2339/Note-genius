@@ -111,8 +111,7 @@ p {
 
 
 
-
-/* ====== Reset & Base Styles ====== */
+/* ===== Reset & Base ===== */
 * {
   margin: 0;
   padding: 0;
@@ -124,27 +123,30 @@ body {
   background: linear-gradient(135deg, #1e293b, #0f172a);
   color: #fff;
   padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
-/* ====== Heading ====== */
+/* ===== Heading ===== */
 h1 {
+  grid-column: span 2;
   text-align: center;
-  margin-bottom: 30px;
   font-size: 2.5rem;
+  margin-bottom: 10px;
   letter-spacing: 1px;
 }
 
-/* ====== Section Layout ====== */
+/* ===== Section Box ===== */
 section {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 25px;
   background: rgba(255, 255, 255, 0.05);
   padding: 15px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 section:hover {
@@ -152,15 +154,17 @@ section:hover {
   box-shadow: 0 6px 18px rgba(0,0,0,0.4);
 }
 
-/* ====== Section Title ====== */
+/* ===== Section Title ===== */
 section h2 {
-  flex-basis: 20%;
   font-size: 1.2rem;
-  margin-bottom: 10px;
-  min-width: 140px;
 }
 
-/* ====== Input Styles ====== */
+/* ===== Input Row (Textarea + Button) ===== */
+section div.input-row {
+  display: flex;
+  gap: 10px;
+}
+
 textarea, input[type="text"] {
   flex: 1;
   min-height: 60px;
@@ -179,16 +183,17 @@ textarea:focus, input[type="text"]:focus {
   background: rgba(255,255,255,0.15);
 }
 
-/* ====== Button Styles ====== */
+/* ===== Buttons ===== */
 button {
   background: linear-gradient(135deg, #f97316, #fb923c);
   color: white;
   border: none;
-  padding: 12px 20px;
+  padding: 0 20px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
   transition: background 0.3s ease, transform 0.2s ease;
+  min-width: 100px;
 }
 
 button:hover {
@@ -200,10 +205,8 @@ button:active {
   transform: scale(0.97);
 }
 
-/* ====== Output Text ====== */
+/* ===== Output Box ===== */
 p {
-  margin-top: 10px;
-  flex-basis: 100%;
   background: rgba(255,255,255,0.05);
   padding: 10px;
   border-radius: 8px;
@@ -212,12 +215,12 @@ p {
   color: #f1f5f9;
 }
 
-/* ====== Responsive ====== */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
-  section {
-    flex-direction: column;
+  body {
+    grid-template-columns: 1fr;
   }
-  section h2 {
-    margin-bottom: 5px;
+  h1 {
+    grid-column: span 1;
   }
 }
