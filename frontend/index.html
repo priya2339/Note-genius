@@ -97,19 +97,17 @@
 
 
 
-
-<!-- frontend/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AI Learning Assistant</title>
+
   <style>
-    /* ====== Global Styles ====== */
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1E293B, #0F172A, #334155);
+      background: linear-gradient(135deg, #2E3B3E, #1B262C, #3A4750);
       margin: 0;
       padding: 20px;
       color: #E2E8F0;
@@ -120,7 +118,6 @@
       margin-bottom: 20px;
     }
 
-    /* ====== Layout ====== */
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -145,7 +142,6 @@
       margin-bottom: 10px;
     }
 
-    /* ====== Textarea ====== */
     textarea {
       width: 100%;
       height: 60px;
@@ -157,7 +153,6 @@
       margin-bottom: 10px;
     }
 
-    /* ====== Input ====== */
     input[type="text"] {
       width: calc(100% - 130px);
       padding: 10px;
@@ -167,7 +162,6 @@
       margin-right: 10px;
     }
 
-    /* ====== Buttons ====== */
     button {
       width: 120px;
       background: linear-gradient(90deg, #F97316, #EA580C);
@@ -185,11 +179,16 @@
       transform: scale(1.05);
     }
 
-    /* ====== Output ====== */
     .output {
       margin-top: 10px;
       font-size: 0.95rem;
       color: #475569;
+    }
+
+    .flex-row {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -197,45 +196,46 @@
   <h1>AI Learning Assistant</h1>
 
   <main class="grid-container">
-    <!-- Row 1 -->
+    <!-- Summarize -->
     <section class="tool-card">
       <h2>📝 Summarize</h2>
-      <textarea id="summarizeInput" placeholder="Paste your notes here..."></textarea>
-      <button onclick="summarizeNotes()">Summarize</button>
-      <div class="output" id="summaryOutput"></div>
+      <textarea placeholder="Paste your notes here..."></textarea>
+      <button onclick="summarize()">Summarize</button>
+      <div class="output" id="summary-output"></div>
     </section>
 
+    <!-- Expand -->
     <section class="tool-card">
       <h2>📌 Expand Bullet Points</h2>
-      <textarea id="expandInput" placeholder="Enter bullet points here..."></textarea>
+      <textarea placeholder="Enter bullet points here..."></textarea>
       <button onclick="expandBullets()">Expand</button>
-      <div class="output" id="expandOutput"></div>
+      <div class="output" id="expand-output"></div>
     </section>
 
-    <!-- Row 2 -->
+    <!-- Quiz -->
     <section class="tool-card">
       <h2>🎯 Generate Quiz</h2>
-      <textarea id="quizInput" placeholder="Enter topic or notes for quiz..."></textarea>
+      <textarea placeholder="Enter topic or notes for quiz..."></textarea>
       <button onclick="generateQuiz()">Generate Quiz</button>
-      <div class="output" id="quizOutput"></div>
+      <div class="output" id="quiz-output"></div>
     </section>
 
+    <!-- Translate -->
     <section class="tool-card">
       <h2>🌍 Translate</h2>
-      <textarea id="translateInput" placeholder="Enter text to translate..."></textarea>
-      <div style="display: flex; margin-top: 10px;">
-        <input type="text" id="targetLanguage" placeholder="e.g., Hindi" />
+      <textarea placeholder="Enter text to translate..."></textarea>
+      <div class="flex-row">
+        <input type="text" placeholder="e.g., Hindi" />
         <button onclick="translateText()">Translate</button>
       </div>
-      <div class="output" id="translateOutput"></div>
+      <div class="output" id="translate-output"></div>
     </section>
   </main>
 
+  <!-- External Script -->
   <script src="script.js"></script>
 </body>
 </html>
-
-
 
 
 
