@@ -1,48 +1,59 @@
-<!-- frontend/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI Tool</title>
+  <title>AI Learning Assistant</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>AI Learning Assistant</h1>
 
-<main class="grid-container">
   <!-- Row 1 -->
-  <section class="tool-card">
-    <h2>📝 Summarize</h2>
-    <textarea id="summarizeInput" placeholder="Paste your notes here..."></textarea>
-    <button onclick="summarizeNotes()">Summarize</button>
-    <div class="output" id="summaryOutput"></div>
-  </section>
+  <div class="row">
+    <section class="tool-card">
+      <h2>📝 Summarize</h2>
+      <div class="input-group">
+        <textarea id="summarizeInput" placeholder="Paste your notes here..."></textarea>
+        <button onclick="summarizeNotes()">Summarize</button>
+      </div>
+      <div class="output" id="summaryOutput"></div>
+    </section>
 
-  <section class="tool-card">
-    <h2>📌 Expand Bullet Points</h2>
-    <textarea id="expandInput" placeholder="Enter bullet points here..."></textarea>
-    <button onclick="expandBullets()">Expand</button>
-    <div class="output" id="expandOutput"></div>
-  </section>
+    <section class="tool-card">
+      <h2>📌 Expand Bullet Points</h2>
+      <div class="input-group">
+        <textarea id="expandInput" placeholder="Enter bullet points here..."></textarea>
+        <button onclick="expandBullets()">Expand</button>
+      </div>
+      <div class="output" id="expandOutput"></div>
+    </section>
+  </div>
 
   <!-- Row 2 -->
-  <section class="tool-card">
-    <h2>🎯 Generate Quiz</h2>
-    <textarea id="quizInput" placeholder="Enter topic or notes for quiz..."></textarea>
-    <button onclick="generateQuiz()">Generate Quiz</button>
-    <div class="output" id="quizOutput"></div>
-  </section>
+  <div class="row">
+    <section class="tool-card">
+      <h2>🎯 Generate Quiz</h2>
+      <div class="input-group">
+        <textarea id="quizInput" placeholder="Enter topic or notes for quiz..."></textarea>
+        <button onclick="generateQuiz()">Generate Quiz</button>
+      </div>
+      <div class="output" id="quizOutput"></div>
+    </section>
 
-  <section class="tool-card">
-    <h2>🌍 Translate</h2>
-    <textarea id="translateInput" placeholder="Enter text to translate..."></textarea>
-    <input type="text" id="targetLanguage" placeholder="e.g., Hindi" />
-    <button onclick="translateText()">Translate</button>
-    <div class="output" id="translateOutput"></div>
-  </section>
+    <section class="tool-card">
+      <h2>🌍 Translate</h2>
+      <div class="input-group">
+        <textarea id="translateInput" placeholder="Enter text to translate..."></textarea>
+      </div>
+      <div class="input-row">
+        <input type="text" id="targetLanguage" placeholder="e.g., Hindi" />
+        <button onclick="translateText()">Translate</button>
+      </div>
+      <div class="output" id="translateOutput"></div>
+    </section>
+  </div>
 
-</main>
   <script src="script.js"></script>
 </body>
 </html>
