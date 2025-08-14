@@ -10,35 +10,39 @@
 <body>
   <h1>AI Learning Assistant</h1>
 
-  <section>
-    <h2>Summarize</h2>
-    <textarea id="summarizeInput"></textarea>
+<main class="grid-container">
+  <!-- Row 1 -->
+  <section class="tool-card">
+    <h2>📝 Summarize</h2>
+    <textarea id="summarizeInput" placeholder="Paste your notes here..."></textarea>
     <button onclick="summarizeNotes()">Summarize</button>
-    <p id="summaryOutput"></p>
+    <div class="output" id="summaryOutput"></div>
   </section>
 
-  <section>
-    <h2>Expand Bullet Points</h2>
-    <textarea id="expandInput"></textarea>
+  <section class="tool-card">
+    <h2>📌 Expand Bullet Points</h2>
+    <textarea id="expandInput" placeholder="Enter bullet points here..."></textarea>
     <button onclick="expandBullets()">Expand</button>
-    <p id="expandOutput"></p>
+    <div class="output" id="expandOutput"></div>
   </section>
 
-  <section>
-    <h2>Generate Quiz</h2>
-    <textarea id="quizInput"></textarea>
-    <button onclick="generateQuiz()">Generate</button>
-    <p id="quizOutput"></p>
+  <!-- Row 2 -->
+  <section class="tool-card">
+    <h2>🎯 Generate Quiz</h2>
+    <textarea id="quizInput" placeholder="Enter topic or notes for quiz..."></textarea>
+    <button onclick="generateQuiz()">Generate Quiz</button>
+    <div class="output" id="quizOutput"></div>
   </section>
 
-  <section>
-    <h2>Translate</h2>
-    <textarea id="translateInput"></textarea>
+  <section class="tool-card">
+    <h2>🌍 Translate</h2>
+    <textarea id="translateInput" placeholder="Enter text to translate..."></textarea>
     <input type="text" id="targetLanguage" placeholder="e.g., Hindi" />
     <button onclick="translateText()">Translate</button>
-    <p id="translateOutput"></p>
+    <div class="output" id="translateOutput"></div>
   </section>
 
+</main>
   <script src="script.js"></script>
 </body>
 </html>
