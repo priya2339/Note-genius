@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -43,3 +43,84 @@
 </html>
 
 
+ -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Learning Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>AI Learning Assistant</h1>
+
+  <div class="row">
+    <section class="tool-card">
+      <h2>Summarize</h2>
+      <textarea id="summarizeInput" placeholder="Enter text to summarize..."></textarea>
+      <button onclick="summarizeNotes()">Summarize</button>
+      <p id="summaryOutput"></p>
+    </section>
+
+    <section class="tool-card">
+      <h2>Expand Bullet Points</h2>
+      <textarea id="expandInput" placeholder="Enter bullet points..."></textarea>
+      <button onclick="expandBullets()">Expand</button>
+      <p id="expandOutput"></p>
+    </section>
+  </div>
+
+  <div class="row">
+    <section class="tool-card">
+      <h2>Generate Quiz</h2>
+      <textarea id="quizInput" placeholder="Enter text for quiz..."></textarea>
+      <button onclick="generateQuiz()">Generate</button>
+      <p id="quizOutput"></p>
+    </section>
+
+    <section class="tool-card">
+      <h2>Translate</h2>
+      <textarea id="translateInput" placeholder="Enter text to translate..."></textarea>
+      <input type="text" id="targetLanguage" placeholder="e.g., Hindi" />
+      <button onclick="translateText()">Translate</button>
+      <p id="translateOutput"></p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
