@@ -110,7 +110,6 @@ p {
 
 
 
-
 /* ===== Reset & Base ===== */
 * {
   margin: 0;
@@ -159,12 +158,14 @@ section h2 {
   font-size: 1.2rem;
 }
 
-/* ===== Input Row (Textarea + Button) ===== */
-section div.input-row {
+/* ===== Row for Textarea + Button ===== */
+.input-row {
   display: flex;
   gap: 10px;
+  align-items: stretch;
 }
 
+/* ===== Textarea & Input ===== */
 textarea, input[type="text"] {
   flex: 1;
   min-height: 60px;
@@ -193,7 +194,7 @@ button {
   cursor: pointer;
   font-weight: bold;
   transition: background 0.3s ease, transform 0.2s ease;
-  min-width: 100px;
+  white-space: nowrap;
 }
 
 button:hover {
@@ -222,5 +223,8 @@ p {
   }
   h1 {
     grid-column: span 1;
+  }
+  .input-row {
+    flex-direction: column;
   }
 }
