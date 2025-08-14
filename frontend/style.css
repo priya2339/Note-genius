@@ -1,58 +1,111 @@
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
-  gap: 20px;
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #1E293B, #0F172A, #334155);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  margin: 0;
   padding: 20px;
+  color: white;
 }
 
-.tool-card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  text-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+}
+
+.row {
   display: flex;
-  flex-direction: column;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.input-row input {
+  flex: 1; /* width badhane ke liye */
+  min-width: 180px; /* minimum width set */
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  margin-top:  20px;
+  margin-bottom: 20px;
+}
+
+.input-row button {
+  margin: 20px; /* input aur button ke beech gap */
+}
+
+
+.tool-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
+  flex: 1;
+  min-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.5);
 }
 
 .tool-card h2 {
   margin-bottom: 10px;
 }
 
-textarea, input[type="text"] {
-  width: 100%;
-  margin-top: 10px;
+.input-group,
+.input-row {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+textarea {
+  flex: 1;
+  height: 50px;
+  resize: none;
   padding: 10px;
+  border: none;
+  border-radius: 8px;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  resize: vertical;
+  outline: none;
+}
+
+.input-row input {
+  width: 120px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
 }
 
 button {
-  margin-top: 10px;
-  padding: 10px 15px;
-  background: #4a90e2;
+  background: linear-gradient(90deg, #ff914d, #cc7722);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: all 0.3s ease;
+  height: 50px;
+  padding: 0 15px;
 }
 
 button:hover {
-  background: #357ab8;
-}
-
-.output {
-  margin-top: 15px;
-  padding: 10px;
-  background: #f0f3f7;
-  border-radius: 6px;
-  min-height: 40px;
-}
-
-/* For mobile: stack into 1 column */
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
+  background: linear-gradient(90deg, #cc7722, #ff914d);
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(204, 119, 34, 0.5);
 }
