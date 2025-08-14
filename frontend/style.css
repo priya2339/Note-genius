@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #1E293B, #0F172A, #334155);
   background-size: 400% 400%;
@@ -93,4 +93,131 @@ p {
   margin-top: 10px;
   font-size: 0.95rem;
   color: #f1f5f9;
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====== Reset & Base Styles ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: #fff;
+  padding: 20px;
+}
+
+/* ====== Heading ====== */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+/* ====== Section Layout ====== */
+section {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+}
+
+section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+/* ====== Section Title ====== */
+section h2 {
+  flex-basis: 20%;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  min-width: 140px;
+}
+
+/* ====== Input Styles ====== */
+textarea, input[type="text"] {
+  flex: 1;
+  min-height: 60px;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 0.95rem;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+textarea:focus, input[type="text"]:focus {
+  background: rgba(255,255,255,0.15);
+}
+
+/* ====== Button Styles ====== */
+button {
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #fb923c, #f97316);
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* ====== Output Text ====== */
+p {
+  margin-top: 10px;
+  flex-basis: 100%;
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #f1f5f9;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;
+  }
+  section h2 {
+    margin-bottom: 5px;
+  }
 }
