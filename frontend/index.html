@@ -46,7 +46,7 @@
  -->
 
 
-
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,11 +93,147 @@
 
   <script src="script.js"></script>
 </body>
+</html> -->
+
+
+
+
+<!-- frontend/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Learning Assistant</title>
+  <style>
+    /* ====== Global Styles ====== */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1E293B, #0F172A, #334155);
+      margin: 0;
+      padding: 20px;
+      color: #E2E8F0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* ====== Layout ====== */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .tool-card {
+      background: #F8FAFC;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      color: #1E293B;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+    }
+
+    .tool-card h2 {
+      margin-bottom: 10px;
+    }
+
+    /* ====== Textarea ====== */
+    textarea {
+      width: 100%;
+      height: 60px;
+      resize: none;
+      padding: 10px;
+      border: 1px solid #94A3B8;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    /* ====== Input ====== */
+    input[type="text"] {
+      width: calc(100% - 130px);
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #94A3B8;
+      font-size: 1rem;
+      margin-right: 10px;
+    }
+
+    /* ====== Buttons ====== */
+    button {
+      width: 120px;
+      background: linear-gradient(90deg, #F97316, #EA580C);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      height: 50px;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #EA580C, #F97316);
+      transform: scale(1.05);
+    }
+
+    /* ====== Output ====== */
+    .output {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #475569;
+    }
+  </style>
+</head>
+<body>
+  <h1>AI Learning Assistant</h1>
+
+  <main class="grid-container">
+    <!-- Row 1 -->
+    <section class="tool-card">
+      <h2>📝 Summarize</h2>
+      <textarea id="summarizeInput" placeholder="Paste your notes here..."></textarea>
+      <button onclick="summarizeNotes()">Summarize</button>
+      <div class="output" id="summaryOutput"></div>
+    </section>
+
+    <section class="tool-card">
+      <h2>📌 Expand Bullet Points</h2>
+      <textarea id="expandInput" placeholder="Enter bullet points here..."></textarea>
+      <button onclick="expandBullets()">Expand</button>
+      <div class="output" id="expandOutput"></div>
+    </section>
+
+    <!-- Row 2 -->
+    <section class="tool-card">
+      <h2>🎯 Generate Quiz</h2>
+      <textarea id="quizInput" placeholder="Enter topic or notes for quiz..."></textarea>
+      <button onclick="generateQuiz()">Generate Quiz</button>
+      <div class="output" id="quizOutput"></div>
+    </section>
+
+    <section class="tool-card">
+      <h2>🌍 Translate</h2>
+      <textarea id="translateInput" placeholder="Enter text to translate..."></textarea>
+      <div style="display: flex; margin-top: 10px;">
+        <input type="text" id="targetLanguage" placeholder="e.g., Hindi" />
+        <button onclick="translateText()">Translate</button>
+      </div>
+      <div class="output" id="translateOutput"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
-
-
-
-
 
 
 
