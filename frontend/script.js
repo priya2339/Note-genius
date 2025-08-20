@@ -93,7 +93,23 @@
 
 
 
+// ✅ Common helper function
+async function safeFetch(url, body) {
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
 
+  const raw = await response.text(); // pehle hamesha raw text lo
+  try {
+    return JSON.parse(raw); // JSON parse koshish karo
+  } catch (e) {
+    throw new Error(`Not JSON. Status: ${response.status}. Body: ${raw}`);
+  }
+}
+
+// ✅ Ab aapke functions
 
 async function summarizeNotes() {
   const text = document.getElementById('summarizeInput').value;
@@ -139,4 +155,3 @@ async function translateText() {
     document.getElementById('translateOutput').innerText = `❌ ${err.message}`;
   }
 }
-
